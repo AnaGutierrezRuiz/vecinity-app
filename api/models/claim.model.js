@@ -25,7 +25,8 @@ const claimSchema = new Schema({
   },
   state: {
     type: String,
-    enum: ["Pending", "Solved"]
+    enum: ["Pending", "Solved"],
+    default: "Pending"
   }
 
 }, {
@@ -42,7 +43,7 @@ const claimSchema = new Schema({
 }
 );
 
-userSchema.virtual("claims", {
+claimSchema.virtual("claims", {
   ref: "Claim",
   localField: "_id",
   foreignField: "user",
