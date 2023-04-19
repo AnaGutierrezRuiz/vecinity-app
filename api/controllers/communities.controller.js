@@ -1,7 +1,5 @@
 const Community = require("../models/community.model");
 
-const todo = 
-
 module.exports.list = (req, res, next) => {
   Community.find()
     .then((communities) => {
