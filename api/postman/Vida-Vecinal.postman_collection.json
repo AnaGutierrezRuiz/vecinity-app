@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "94469208-3c0f-4f85-bb89-4bc11c1be268",
+		"name": "Vida-Vecinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26791790"
+	},
+	"item": [
+		{
+			"name": "Communities",
+			"item": [
+				{
+					"name": "Communities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mirador de la Albaida 2\",\n    \"address\": \"Calle Jose Aguilar de Dios 6\",\n    \"facilities\": [\"Pádel\", \"Piscina\"],\n    \"imageUrl\": \"\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Panorama1\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/643ee8dcf876a95a600f920d",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"643ee8dcf876a95a600f920d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643e77d05c0273c3f0afb492",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"643e77d05c0273c3f0afb492"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_API_URL",
+			"value": "http://localhost:3002/api/v1",
+			"type": "string"
+		}
+	]
+}
