@@ -2,6 +2,9 @@ const Community = require("../models/community.model");
 
 module.exports.list = (req, res, next) => {
   Community.find()
+    .populate("claims")
+    .populate("neighbours")
+    .populate("manager")
     .then((communities) => {
       res.json(communities);
     })

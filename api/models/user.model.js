@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
   name: {
@@ -33,8 +34,8 @@ const userSchema = new Schema({
     minLength: [8, "Password needs at least 8 chars"]
   },
   community: {
-    type: String,
-    required: true
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Community "
   },
   phoneNumber: {
     type: Number
@@ -57,11 +58,30 @@ const userSchema = new Schema({
       delete ret.__v;
       ret.id = ret._id;
       delete ret._id;
+      delete ret.password;
       return ret;
     }
   }
 }
 );
+
+userSchema.pre('save', function (next) {
+  const user = this;
+
+  if (user.isModified('password')) {
+    bcrypt
+      .genSalt(10)
+      .then((salt) => {
+        return bcrypt.hash(user.password, salt).then((hash) => {
+          user.password = hash;
+          next();
+        });
+      })
+      .catch((error) => next(error));
+  } else {
+    next();
+  }
+});
 
 userSchema.virtual("claims", {
   ref: "Claim",
