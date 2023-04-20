@@ -26,7 +26,7 @@ const userSchema = new Schema({
   },
   confirm: {
     type: Boolean,
-    default: process.env.USER_CONFIRMATION_REQUIRED === "false"
+    default: process.env.USER_CONFIRMATION_REQUIRED
   },
   password: {
     type: String,
