@@ -19,11 +19,12 @@ router.get("/users/:id", usersMid.exists, users.detail);
 router.get("/users/:id/confirm", usersMid.exists, users.confirm);
 router.patch("/users/:id", usersMid.exists, users.update);
 router.delete("/users/:id", usersMid.exists, users.delete);
+router.post("/login", users.login);
 
-router.get('/communities/:id/claims', communitiesMid.exists, claims.list);
-router.get('/communities/:id/claims/:claimId', communitiesMid.exists, claimsMid.exists, claims.detail);
-router.post('/communities/:id/claims', communitiesMid.exists, claims.create);
-router.delete('/communities/:id/claims/:claimId', communitiesMid.exists, claimsMid.exists, claims.delete);
+router.get("/communities/:id/claims", communitiesMid.exists, claims.list);
+router.get("/communities/:id/claims/:claimId", communitiesMid.exists, claimsMid.exists, claims.detail);
+router.post("/communities/:id/claims", communitiesMid.exists, claims.create);
+router.delete("/communities/:id/claims/:claimId", communitiesMid.exists, claimsMid.exists, claims.delete);
 
 
 module.exports = router;
