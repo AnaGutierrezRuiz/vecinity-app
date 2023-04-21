@@ -13,3 +13,11 @@ module.exports.exists = (req, res, next) => {
       }
     });
 };
+
+module.exports.checkAuthor = (req, res, next) => {
+  if (req.claim.user.toString() !== req.user.id.toString()) {
+    next(createError(403, "Forbidden"));
+  } else {
+    next();
+  }
+};
