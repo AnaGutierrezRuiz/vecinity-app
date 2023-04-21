@@ -2,6 +2,7 @@ const Claim = require("../models/claim.model");
 
 module.exports.list = (req, res, next) => {
   Claim.find()
+    .populate("author")
     .then((claims) => {
       res.json(claims);
     })
@@ -12,14 +13,14 @@ module.exports.detail = (req, res, next) => res.json(req.claim);
 
 module.exports.create = (req, res, next) => {
   Claim.create(req.body)
-  .then((claim) => res.status(201).json(claim))
-  .catch(next);
+    .then((claim) => res.status(201).json(claim))
+    .catch(next);
 };
 
 //TODO
 module.exports.join = (req, res, next) => {
 
-}
+};
 
 module.exports.update = (req, res, next) => {
   Object.assign(req.claim, req.body);

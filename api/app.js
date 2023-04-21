@@ -6,6 +6,7 @@ const createError = require("http-errors");
 const helmet = require("helmet");
 const mongoose = require("mongoose");
 const secure = require("./middlewares/secure.mid");
+const cors = require("cors");
 
 //** Load configuration */
 require('./config/db.config');
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(logger("dev"));
 app.use(helmet());
 app.use(secure.removeId);
+app.use(cors);
 
 const api = require("./config/routes.config");
 app.use("/api/v1", api);

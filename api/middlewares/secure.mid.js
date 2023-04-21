@@ -5,12 +5,13 @@ const createError = require("http-errors");
 module.exports.removeId = (req, res, next) => {
   if (req.body) {
     delete req.body._id;
+    delete req.body.confirm;
   }
   next();
 };
 
 module.exports.auth = (req, res, next) => {
-  const token = req.headers.authorization.split(" "[1]);
+  const token = req.headers.authorization?.split(" ")?.[1];
 
   if (!token) {
     return next(createError(401, "Missing access token"));
