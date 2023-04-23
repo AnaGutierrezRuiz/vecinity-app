@@ -1,11 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const communities = require("../controllers/communities.controller");
-const users = require("../controllers/users.controller");
-const claims = require("../controllers/claims.controller");
+
+// Controllers
+const communities = require("../controllers/communities.controllers");
+const users = require("../controllers/users.controllers");
+const claims = require("../controllers/claims.controllers");
+const reservations = require("../controllers/reservations.controllers");
+const events = require('../controllers/events.controllers');
+const forumComments = require('../controllers/forumComments.controllers');
+const forumTopics = require('../controllers/forumTopics.controllers');
+
+// Middlewares
 const communitiesMid = require("../middlewares/communities.mid");
 const usersMid = require("../middlewares/users.mid");
 const claimsMid = require("../middlewares/claims.mid");
+const reservationsMid = require("../middlewares/reservations.mid");
+const eventsMid = require('../middlewares/events.mid');
+const forumTopicsMid = require('../middlewares/forumTopics.mid');
+const forumCommentsMid = require('../middlewares/forumComments.mid');
 const secure = require("../middlewares/secure.mid");
 
 // Communities
@@ -30,5 +42,29 @@ router.get("/communities/:id/claims/:claimId", secure.auth, communitiesMid.exist
 router.post("/communities/:id/claims", secure.auth, communitiesMid.exists, claims.create);
 router.delete("/communities/:id/claims/:claimId", communitiesMid.exists, claimsMid.exists, claimsMid.checkAuthor, claims.delete);
 
+// Reservations
+router.get("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservations.list);
+router.get("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservations.detail);
+router.post("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservations.create);
+router.delete("/communities/:id/reservations/reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservations.delete);
+
+// Events
+router.get('/communities/:id/events', secure.auth, communitiesMid.exists, events.list);
+router.post('/communities/:id/events', secure.auth, communitiesMid.exists,  events.create);
+router.get('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, events.detail);
+router.patch('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, events.update);
+router.delete('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, events.delete);
+
+// Forum Topics
+router.get('/communities/:id/forumTopics', secure.auth, communitiesMid.exists, forumTopics.list);
+router.post('/communities/:id/forumTopics', secure.auth, communitiesMid.exists,  forumTopics.create);
+router.get('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopics.detail);
+router.patch('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopics.update);
+router.delete('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopics.delete);
+
+// Forum Comments
+router.get('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists, forumComments.list);
+router.post('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists,  forumComments.create);
+router.delete('/communities/:id/forumTopics/:forumTopicId/forumComments/:forumCommentId', secure.auth, communitiesMid.exists, forumCommentsMid.exists, forumComments.delete);
 
 module.exports = router;

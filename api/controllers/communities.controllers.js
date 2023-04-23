@@ -1,6 +1,7 @@
 const Community = require("../models/community.model");
 
 module.exports.list = (req, res, next) => {
+  console.log('hola');
   Community.find()
     .populate("claims")
     .populate("neighbours")
@@ -14,15 +15,11 @@ module.exports.list = (req, res, next) => {
 module.exports.detail = (req, res, next) => res.json(req.community);
 
 module.exports.create = (req, res, next) => {
+  req.body.manager = req.user.id;
   Community.create(req.body)
   .then((community) => res.status(201).json(community))
   .catch(next);
 };
-
-//TODO
-module.exports.join = (req, res, next) => {
-
-}
 
 module.exports.update = (req, res, next) => {
   Object.assign(req.community, req.body);

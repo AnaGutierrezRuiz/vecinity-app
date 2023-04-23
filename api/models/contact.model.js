@@ -26,6 +26,10 @@ const contactSchema = new Schema({
     match: [/^https?:\/\/.+\.(jpg|jpeg|png)$/, "Image URL must be valid"],
     default: "https://www.iprcenter.gov/image-repository/blank-profile-picture.png/@@images/image.png"
   },
+  community: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Community"
+  }
 }, { 
   timestamps: true,
   toJSON: {

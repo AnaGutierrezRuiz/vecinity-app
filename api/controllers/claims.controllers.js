@@ -17,11 +17,6 @@ module.exports.create = (req, res, next) => {
     .catch(next);
 };
 
-//TODO
-module.exports.join = (req, res, next) => {
-
-};
-
 module.exports.update = (req, res, next) => {
   Object.assign(req.claim, req.body);
   req.claim.save()

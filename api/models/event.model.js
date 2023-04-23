@@ -16,6 +16,10 @@ const eventSchema = new Schema({
     type: Date,
     required: true,
   },
+  community: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Community"
+  }
 }, { 
   timestamps: true,
   toJSON: {

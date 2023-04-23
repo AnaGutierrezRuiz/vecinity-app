@@ -18,12 +18,10 @@ module.exports.exists = (req, res, next) => {
 };
 
 module.exports.checkManager = (req, res, next) => {
-  if (!req.community.manager
-   .map ((managerId) => managerId.toString())
-   .includes(req.user.id.toString()) 
-  ) {
+  console.log(req.community.manager, req.user.id);
+  if (req.community.manager.id !== req.user.id) {
     next(createError(403, "Forbidden"));
   } else {
-    next;
+    next();
   }
 };

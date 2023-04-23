@@ -1,4 +1,5 @@
 const User = require("../models/user.model");
+const Community = require('../models/community.model');
 const mailer = require("../config/mailer.config");
 const createError = require("http-errors");
 const jwt = require("jsonwebtoken");
@@ -14,17 +15,19 @@ module.exports.list = (req, res, next) => {
 module.exports.detail = (req, res, next) => res.json(req.user);
 
 module.exports.create = (req, res, next) => {
-  User.create(req.body)
+  Community.findOne({ code: req.body.code })
+    .then((community) => {
+      delete req.body.code;
+      if (community) {
+        req.body.community = community.id;
+      }
+      return User.create(req.body);
+    })
     .then((user) => {
-      mailer.sendConfirmationEmail(user);
+      // mailer.sendConfirmationEmail(user);
       res.status(201).json(user);
     })
     .catch(next);
-};
-
-// TODO
-module.exports.join = (req, res, next) => {
-
 };
 
 module.exports.confirm = (req, res, next) => {
@@ -77,7 +80,7 @@ module.exports.login = (req, res, next) => {
 
           const token = jwt.sign({ sub: user.id, exp: Date.now() / 1000 + 3600 }, process.env.JWT_SECRET);
 
-          res.json(user);
+          res.json({ token });
         });
     })
     .catch(next);

@@ -19,7 +19,7 @@ const claimSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Community"
   },
-  user: {
+  author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"
   },
