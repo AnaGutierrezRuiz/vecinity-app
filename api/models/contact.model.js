@@ -44,5 +44,5 @@ const contactSchema = new Schema({
   } 
 });
 
-const Event = mongoose.model('Event', eventSchema);
-module.exports = Event;
+const Contact = mongoose.model('Contact', contactSchema);
+module.exports = Contact;

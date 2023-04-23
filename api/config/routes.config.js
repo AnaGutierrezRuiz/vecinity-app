@@ -9,6 +9,7 @@ const reservations = require("../controllers/reservations.controllers");
 const events = require('../controllers/events.controllers');
 const forumComments = require('../controllers/forumComments.controllers');
 const forumTopics = require('../controllers/forumTopics.controllers');
+const contacts = require('../controllers/contacts.controllers');
 
 // Middlewares
 const communitiesMid = require("../middlewares/communities.mid");
@@ -18,6 +19,7 @@ const reservationsMid = require("../middlewares/reservations.mid");
 const eventsMid = require('../middlewares/events.mid');
 const forumTopicsMid = require('../middlewares/forumTopics.mid');
 const forumCommentsMid = require('../middlewares/forumComments.mid');
+const contactsMid = require('../middlewares/contacts.mid');
 const secure = require("../middlewares/secure.mid");
 
 // Communities
@@ -66,5 +68,12 @@ router.delete('/communities/:id/forumTopics/:forumTopicId', secure.auth, communi
 router.get('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists, forumComments.list);
 router.post('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists,  forumComments.create);
 router.delete('/communities/:id/forumTopics/:forumTopicId/forumComments/:forumCommentId', secure.auth, communitiesMid.exists, forumCommentsMid.exists, forumComments.delete);
+
+router.get('/communities/:id/contacts', contactsMid.exists, contacts.list);
+router.post('/communities/:id/contacts', secure.auth, contacts.create);
+router.get('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contacts.detail);
+router.patch('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contacts.update);
+router.delete('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contacts.delete);
+
 
 module.exports = router;
