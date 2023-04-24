@@ -30,6 +30,15 @@ module.exports.create = (req, res, next) => {
     .catch(next);
 };
 
+module.exports.createManager = (req, res, next) => {
+  User.create(req.body)
+    .then((user) => {
+    mailer.sendManagerEmail(user);
+    res.status(201).json(user)
+  })
+    .catch(next);
+};
+
 module.exports.confirm = (req, res, next) => {
   req.user.confirm = true;
   req.user
@@ -41,7 +50,7 @@ module.exports.confirm = (req, res, next) => {
 };
 
 module.exports.update = (req, res, next) => {
-  if (req.user.id !== req.params.id) {
+  if (req.user.id !== req.params.userId) {
     return next(createError(403, "Forbidden"));
   }
   

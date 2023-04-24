@@ -17,7 +17,7 @@ module.exports.sendConfirmationEmail = (user) => {
       text: "Welcome to Vecinity App",
       html: `
       <h1>Welcome to Vecinity App</h1>
-      <p>Click on the following link to confirm your account:</p>
+      <p>Click on the following link to confirm your account & create your community!</p>
       <a href="${process.env.API_URL}/users/${user.id}/confirm">Confirm</a>
     `
     })

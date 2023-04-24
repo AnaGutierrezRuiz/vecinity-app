@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const storage = require('./storage.config');
 
 // Controllers
 const communities = require("../controllers/communities.controllers");
@@ -27,16 +28,17 @@ router.get('/communities', communities.list);
 router.get('/communities/:id/neighbours', secure.isManager, communities.usersList);
 router.get('/communities/:id', communitiesMid.exists, communities.detail);
 router.post('/communities', secure.auth, communities.create);
-router.patch('/communities/:id', secure.auth, secure.isManager, communitiesMid.exists, communitiesMid.checkManager, communities.update);
+router.patch('/communities/:id', secure.auth, secure.isManager, storage.single('image'), communitiesMid.exists, communitiesMid.checkManager, communities.update);
 router.delete('/communities/:id', secure.auth, communitiesMid.exists, communitiesMid.checkManager, communities.delete);
 
 // Users
 router.get("/users", users.list);
 router.post("/users", users.create);
-router.get("/users/:id", usersMid.exists, users.detail);
+router.post("/users/manager", users.createManager);
+router.get('/communities/:id/users/:userId', usersMid.exists, users.detail);
 router.get("/users/:id/confirm", usersMid.exists, users.confirm);
-router.patch("/users/:id", secure.auth, users.update);
-router.delete("/users/:id", secure.auth, users.delete);
+router.patch('/communities/:id/users/:userId', secure.auth, storage.single('image'), users.update);
+router.delete('/communities/:id/users/:userId', secure.auth, users.delete);
 router.post("/login", users.login);
 
 // Claims
