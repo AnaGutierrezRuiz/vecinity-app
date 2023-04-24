@@ -2,9 +2,8 @@ const Contact = require('../models/contact.model');
 const createError = require('http-errors');
 
 module.exports.exists = (req, res, next) => {
-  const contactId= req.params.contactId || req.params.id
+  const contactId = req.params.contactId || req.params.id
   Contact.findById(contactId)
-    .populate('author')
     .then((contact) => {
       if (contact) {
         req.contact = contact;

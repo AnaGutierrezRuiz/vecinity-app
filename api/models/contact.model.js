@@ -17,7 +17,6 @@ const contactSchema = new Schema({
   },
   email: {
     type: String,
-    required: "Email is required",
     unique: true,
     match: [/^\S+@\S+\.\S+$/, "User email must be valid"],
   },

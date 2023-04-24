@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 const createError = require("http-errors");
+const Community = require('../models/community.model');
 
 module.exports.removeId = (req, res, next) => {
   if (req.body) {
@@ -34,4 +35,25 @@ module.exports.auth = (req, res, next) => {
   } catch (error) {
     next(createError(401, "Invalid token"));
   }
+};
+
+module.exports.checkRole = (role) => {
+  return (req, res, next) => {
+    if (req.user?.role === role) {
+      next();
+    } else {
+      res.redirect('/');
+    }
+  };
+};
+
+module.exports.isManager = (req, res, next) => {
+  Community.findById(req.params.id)
+    .then((community) => {
+      if (req.user?.id === community.manager?.toString()) {
+        next();
+      } else {
+        next(createError(403, "Forbidden"));
+      }
+    }).catch(next);
 };
