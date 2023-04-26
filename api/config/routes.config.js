@@ -35,7 +35,6 @@ router.delete('/communities/:id', secure.auth, communitiesMid.exists, communitie
 // Users
 router.get("/users", users.list);
 router.post("/users", users.create);
-router.post("/users/manager", users.createManager);
 router.get('/communities/:id/users/:userId', usersMid.exists, users.detail);
 router.get("/users/:id/confirm", usersMid.exists, users.confirm);
 router.patch('/communities/:id/users/:userId', secure.auth, storage.single('image'), users.update);

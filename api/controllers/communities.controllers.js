@@ -33,6 +33,16 @@ module.exports.create = (req, res, next) => {
     .catch(next);
 };
 
+module.exports.join = (req, res, next) => {
+  Community.findOne({ code: req.body.code })
+    .then((community) => {
+      req.user.community = community.id;
+      Object.assign(req.user, req.body);
+      req.user.save()
+      res.json(req.user)
+    }).catch(next);
+};
+
 module.exports.update = (req, res, next) => {
   Object.assign(req.community, req.body);
   req.community.save()
