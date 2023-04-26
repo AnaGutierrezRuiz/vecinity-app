@@ -28,6 +28,7 @@ router.get('/communities', communities.list);
 router.get('/communities/:id/neighbours', secure.isManager, communities.usersList);
 router.get('/communities/:id', communitiesMid.exists, communities.detail);
 router.post('/communities', secure.auth, communities.create);
+router.post('/communities/join', secure.auth, communities.join);
 router.patch('/communities/:id', secure.auth, secure.isManager, storage.single('image'), communitiesMid.exists, communitiesMid.checkManager, communities.update);
 router.delete('/communities/:id', secure.auth, communitiesMid.exists, communitiesMid.checkManager, communities.delete);
 
