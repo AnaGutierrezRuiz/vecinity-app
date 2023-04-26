@@ -1,10 +1,9 @@
-import CommunitiesList from "./components/communities-list/CommunitiesList";
+import React from 'react';
 
 function App() {
   return (
-   <>
-    <CommunitiesList />
-   </>
+    <>
+    </>
   );
 }
 
