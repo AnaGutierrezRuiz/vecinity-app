@@ -1,9 +1,13 @@
-import http from './base-api'
+import http from './base-api';
 
- const create = () => http.post('/users')
-   .then((res) => res.data)
+const create = (user) => http.post('/users', user);
 
+const login = (user) => http.post('/login', user);
 
- export default {
-   create
- }
+const get = id => http.get(`/users/${id}`);
+
+export default {
+  create,
+  login,
+  get
+};
