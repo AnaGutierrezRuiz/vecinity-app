@@ -1,9 +1,5 @@
-import http from './base-api'
+import http from './base-api';
 
- const list = () => http.get('/communities')
-   .then((res) => res.data)
+export const list = () => http.get('/communities');
 
-
- export default {
-   list
- }
+export const join = (code) => http.post('/communities/join', code);
