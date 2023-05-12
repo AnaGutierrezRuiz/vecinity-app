@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
-import CommunityHome from './pages/CommunityHomePage';
+import CommunityHomePage from './pages/CommunityHomePage';
 import LoginPage from './pages/LoginPage';
 import JoinPage from './pages/JoinPage';
 import RegisterPage from './pages/RegisterPage';
@@ -44,7 +44,7 @@ function App() {
             <Route path="/join" element={<JoinPage />} />
             <Route path="/welcome/:id" element={<WelcomePage />} />
             <Route path="/communities/create" element={<CommunityCreatePage />} />
-            <Route path="/communities/:id" element={<PrivateRoute><CommunityHome /></PrivateRoute>} />
+            <Route path="/communities/:id" element={<PrivateRoute><CommunityHomePage /></PrivateRoute>} />
             <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage /></PrivateRoute>} />
             <Route path="/communities/:id/claims/:claimId" element={<PrivateRoute><ClaimPage /></PrivateRoute>} />
             <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage /></PrivateRoute>} />
