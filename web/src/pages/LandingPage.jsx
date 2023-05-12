@@ -64,12 +64,12 @@ function LandingPage() {
               </p>
             </div>
             <div className="w-full sm:w-1/2 p-6">
-              <img src="/images/mobile1.png" alt='mobile' />
+              <img src="/images/mobile1.png" alt="mobile" />
             </div>
 
             <div className="flex flex-wrap flex-col-reverse sm:flex-row">
               <div className="w-full sm:w-1/2 p-6 mt-6 flex flex-col items-center justify-center">
-                <img src="images/mobile2.png" alt='mobile' />
+                <img src="images/mobile2.png" alt="mobile" />
               </div>
               <div className="w-full sm:w-1/2 p-6 flex flex-col items-center justify-center">
                 <div className="align-middle">
@@ -97,13 +97,13 @@ function LandingPage() {
                 </p>
               </div>
               <div className="w-full sm:w-1/2 p-6">
-                <img src="/images/mobile3.png" alt='mobile' />
+                <img src="/images/mobile3.png" alt="mobile" />
               </div>
             </div>
 
             <div className="flex flex-wrap flex-col-reverse sm:flex-row">
               <div className="w-full sm:w-1/2 p-6 mt-6">
-                <img src="images/mobile4.png" alt='mobile' />
+                <img src="images/mobile4.png" alt="mobile" />
               </div>
               <div className="w-full sm:w-1/2 p-6 flex flex-col items-center justify-center">
                 <div className="align-middle">
@@ -195,7 +195,7 @@ function LandingPage() {
           <h2 className="w-full my-1 text-5xl font-bold leading-tight text-center text-gray-800 dark:text-white">
             Pricing
           </h2>
-          <h4 className='w-full mt-6 text-xl font-bold leading-tight text-center text-gray-400 dark:text-white'>Monthly supscriptions</h4>
+          <h4 className="w-full mt-6 text-xl font-bold leading-tight text-center text-gray-400 dark:text-white">Monthly supscriptions</h4>
           <div className="w-full mb-4">
             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t">
             </div>
@@ -290,7 +290,7 @@ function LandingPage() {
               <h3 className="mb-1 text-2xl font-bold dark:text-white">
                 <Link to="#">Víctor López Arellano</Link>
               </h3>
-              <p className='dark:text-white'>Junior Full Stack Developer</p>
+              <p className="dark:text-white">Junior Full Stack Developer</p>
               <ul className="flex justify-center items-center mt-3 space-x-4">
                 <li>
                   <Link to="https://www.linkedin.com/in/victorlpz23/" className="text-[#39569c] hover:text-gray-900 dark:hover:text-white">
@@ -309,7 +309,7 @@ function LandingPage() {
               <h3 className="mb-1 text-2xl font-bold tracking-tight dark:text-white">
                 <Link to="#">Ana Gutiérrez Ruiz</Link>
               </h3>
-              <p className='dark:text-white'>Junior Full Stack Developer</p>
+              <p className="dark:text-white">Junior Full Stack Developer</p>
               <ul className="flex justify-center items-center mt-3 space-x-4">
                 <li>
                   <Link to="https://www.linkedin.com/in/ana-gutierrezruiz/" className="text-[#39569c] hover:text-gray-900 dark:hover:text-white">
@@ -328,7 +328,7 @@ function LandingPage() {
               <h3 className="mb-1 text-2xl font-bold tracking-tight dark:text-white">
                 <Link to="#">Alex Garrido Baldrich</Link>
               </h3>
-              <p className='dark:text-white'>Junior Full Stack Developer</p>
+              <p className="dark:text-white">Junior Full Stack Developer</p>
               <ul className="flex justify-center items-center mt-3 space-x-4">
                 <li>
                   <Link to="https://www.linkedin.com/in/alex-garrido-baldrich-07b29aa9/" className="text-[#39569c] hover:text-gray-900 dark:hover:text-white">
@@ -355,7 +355,7 @@ function LandingPage() {
         <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-black mb-12 dark:text-white">
           Join Vecinity now!
         </h2>
-        <Link to='/signup' className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-6 mb-0 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+        <Link to="/signup" className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-6 mb-0 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
           Sign up
         </Link>
       </section>

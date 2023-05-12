@@ -30,7 +30,7 @@ function ClaimDetail() {
       {claim === undefined ? (
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto  lg:py-0 mb-20">
           <div className="w-full bg-white rounded-lg shadow shadow-orange dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className='flex justify-center mt-5 mb-3'>
+            <div className="flex justify-center mt-5 mb-3">
               <div role="status" className="max-w-sm animate-pulse">
                 <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
                 <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
@@ -48,7 +48,7 @@ function ClaimDetail() {
           <>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto mb-20">
               <div className="w-full bg-gray-100 rounded-lg shadow  dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
-                <div className='flex justify-center mt-5 mb-3'>
+                <div className="flex justify-center mt-5 mb-3">
                   <ol className="flex items-center">
                     <li className="relative w-full mb-6">
                       <div className="flex items-center">
@@ -77,14 +77,14 @@ function ClaimDetail() {
                 <p className="font-normal text-center text-gray-700 dark:text-gray-400">{claim.description}</p>
                 <div className="flex flex-row justify-between">
                   <div className="flex flex-row m-6">
-                    <img className='w-10 h-10 rounded-full' src={claim.author.imageUrl} alt='user img' />
+                    <img className="w-10 h-10 rounded-full" src={claim.author.imageUrl} alt="user img" />
                     <h5 className="ms-2 mt-2.5 font-bold text-green leading-tight text-center tracking-tight md:text-2xl dark:text-white">
                       {claim.author.name}
                     </h5>
                   </div>
                   <div className="flex flex-col items-end m-6">
-                    <h5 className="text-s text-green">{moment(claim.createdAt).format('DD/MM/YYYY')}</h5>
-                    <h5 className="text-s text-green">{moment(claim.createdAt).format('hh:mm')}h</h5>
+                    <h5 className="text-s text-green">{moment(claim.createdAt).format("DD/MM/YYYY")}</h5>
+                    <h5 className="text-s text-green">{moment(claim.createdAt).format("hh:mm")}h</h5>
                   </div>
                 </div>
               </div>
