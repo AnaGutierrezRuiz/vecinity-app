@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import forumCommentsService from '../../../services/forumComments';
 import { useParams } from 'react-router-dom';
-import ForumCommentItem from '../forumComments-item/ForumCommentItem';
+import ForumCommentItem from '../forumComment-item/ForumCommentItem';
 
 function ForumCommentsList({ refresh }) {
   const [forumComments, setForumComments] = useState();
