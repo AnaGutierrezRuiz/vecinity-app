@@ -4,9 +4,10 @@ import ContactForm from '../components/contacts/contact-form/ContactForm';
 import PageLayout from '../components/layout/PageLayout';
 
 function ContactsPage() {
-  const [refreshContacts, setRefreshContacts] = useState(false);
 
+  const [refreshContacts, setRefreshContacts] = useState(false);
   const toggleRefreixContacts = () => setRefreshContacts(!refreshContacts);
+
   return (
     <>
       <PageLayout title="Contacts">

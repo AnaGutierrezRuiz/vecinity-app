@@ -4,6 +4,7 @@ import { AuthContext } from '../contexts/AuthStore';
 import PageLayout from '../components/layout/PageLayout';
 
 function CommunityHomePage() {
+  
   const { user } = useContext(AuthContext);
 
   return (

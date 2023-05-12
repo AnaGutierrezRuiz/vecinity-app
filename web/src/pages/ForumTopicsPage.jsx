@@ -4,8 +4,8 @@ import ForumTopicForm from '../components/forumTopics/forumTopic-form/ForumTopic
 import PageLayout from '../components/layout/PageLayout';
 
 function ForumPage() {
-  const [refreshTopics, setRefreshTopics] = useState(false)
 
+  const [refreshTopics, setRefreshTopics] = useState(false)
   const toggleRefreshReservations = () => setRefreshTopics(!refreshTopics);
 
   return (
@@ -18,4 +18,4 @@ function ForumPage() {
   )
 }
 
-export default ForumPage
+export default ForumPage;

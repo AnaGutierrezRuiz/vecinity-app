@@ -5,8 +5,8 @@ import PageLayout from '../components/layout/PageLayout';
 
 
 function ClaimsPage() {
+  
   const [refreshClaims, setRefreshClaims] = useState(false);
-
   const toggleRefreshClaims = () => setRefreshClaims(!refreshClaims);
 
   return (
