@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home';
+import LandingPage from './pages/LandingPage';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
-import CommunityHome from './pages/CommunityHome';
+import CommunityHome from './pages/CommunityHomePage';
 import LoginPage from './pages/LoginPage';
 import JoinPage from './pages/JoinPage';
 import RegisterPage from './pages/RegisterPage';
@@ -37,7 +37,7 @@ function App() {
         <AuthStore>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/signup" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/create-join" element={<CreateJoinPage />} />
