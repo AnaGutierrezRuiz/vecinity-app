@@ -2,11 +2,8 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthStore.js';
 
-
-
 function WelcomePage() {
   const { user } = useContext(AuthContext);
-
 
   return (
     <>

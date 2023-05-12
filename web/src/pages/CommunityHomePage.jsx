@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthStore';
 import PageLayout from '../components/layout/PageLayout';
 
-function CommunityHome() {
+function CommunityHomePage() {
   const { user } = useContext(AuthContext);
 
   return (
@@ -57,4 +57,4 @@ function CommunityHome() {
   );
 }
 
-export default CommunityHome;
+export default CommunityHomePage;
