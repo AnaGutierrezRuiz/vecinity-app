@@ -1,13 +1,16 @@
-const Community = require("../models/community.model");
+const Community = require('../models/community.model');
 
 module.exports.list = (req, res, next) => {
   Community.find()
-    .populate("claims")
-    .populate("neighbours")
-    .populate("manager")
-    .then((communities) => {
-      res.json(communities);
-    })
+    .populate('claims')
+    .populate('neighbours')
+    .populate('manager')
+    .populate('forumTopics')
+    .populate('forumComments')
+    .populate('events')
+    .populate('contacts')
+    .populate('reservations')
+    .then((communities) => res.json(communities))
     .catch(next);
 };
 
@@ -15,15 +18,12 @@ module.exports.usersList = (req, res, next) => {
   Community.findById(req.params.id)
     .populate('neighbours')
     .then((community) => {
-      res.json(community.neighbours)
+      res.json(community.neighbours);
     })
     .catch(next);
 };
 
-module.exports.detail = (req, res, next) => res.json(req.community);
-
 module.exports.create = (req, res, next) => {
-  
   let code = Math.random().toString(36).substring(0, 6);
 
   req.body.manager = req.user.id;
@@ -33,13 +33,15 @@ module.exports.create = (req, res, next) => {
     .catch(next);
 };
 
+module.exports.detail = (req, res, next) => res.json(req.community);
+
 module.exports.join = (req, res, next) => {
   Community.findOne({ code: req.body.code })
     .then((community) => {
       req.user.community = community.id;
       Object.assign(req.user, req.body);
-      req.user.save()
-      res.json(req.user)
+      req.user.save();
+      res.json(req.user);
     }).catch(next);
 };
 

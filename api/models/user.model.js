@@ -1,33 +1,34 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 
 // Creating emails for admins
 const ADMIN_USERS = (process.env.ADMIN_USERS || 'admin@example.org')
-.split(',')
-.map(email => email.trim())
+  .split(',')
+  .map(email => email.trim());
 
 const userSchema = new Schema({
   name: {
     type: String,
-    required: "Name is required",
-    minLength: [2, "Name needs at least 2 chars"]
-
+    required: 'Name is required',
+    minlength: [2, 'Name needs at least 2 chars'],
   },
   lastName: {
     type: String,
-    required: "Lastname is required",
-    minLength: [2, "Name needs at least 2 chars"]
+    required: 'Last Name is required',
+    minlength: [2, 'Last Name needs at least 2 chars']
   },
   home: {
     type: String,
-    required: true
+  },
+  phoneNumber: {
+    type: Number,
   },
   email: {
     type: String,
-    required: "Email is required",
-    unique: true,
-    match: [/^\S+@\S+\.\S+$/, "User email must be valid"],
+    required: 'Email is required',
+    unique: 'Email already exists',
+    match: [/^\S+@\S+\.\S+$/, 'Email must be valid']
   },
   confirm: {
     type: Boolean,
@@ -35,26 +36,27 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    required: "Password is required",
-    minLength: [8, "Password needs at least 8 chars"]
-  },
-  community: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Community "
-  },
-  phoneNumber: {
-    type: Number
-  },
-  imageUrl: {
-    type: String,
-    match: [/^https?:\/\/.+\.(jpg|jpeg|png)$/, "Image URL must be valid"],
-    default: "https://www.iprcenter.gov/image-repository/blank-profile-picture.png/@@images/image.png"
+    required: 'Password is required',
+    minlength: [8, 'Password needs at least 8 chars'],
   },
   role: {
     type: String,
-    enum: ["admin", "guest"],
-    default: "guest"
-  }
+    enum: ['admin', 'guest'],
+    default: 'guest',
+  },
+  imageUrl: {
+    type: String,
+    match: [/^https?:\/\/.+\.(jpg|jpeg|png)$/, 'Image URL must be valid'],
+    default: 'https://www.iprcenter.gov/image-repository/blank-profile-picture.png/@@images/image.png'
+  },
+  community: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Community',
+  },
+  code: {
+    type: String
+  },
+
 }, {
   timestamps: true,
   toJSON: {
@@ -67,8 +69,7 @@ const userSchema = new Schema({
       return ret;
     }
   }
-}
-);
+});
 
 userSchema.pre('save', function (next) {
   const user = this;
@@ -92,12 +93,12 @@ userSchema.methods.checkPassword = function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual("claims", {
-  ref: "Claim",
-  localField: "_id",
-  foreignField: "user",
-  justOne: false
+userSchema.virtual('claims', {
+  ref: 'Claim',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: false,
 });
 
 const User = mongoose.model('User', userSchema);
-module.exports = User; 
+module.exports = User;

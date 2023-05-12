@@ -1,24 +1,24 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const forumCommentSchema = new Schema(
   {
     text: {
       type: String,
-      required: "Text is required",
+      required: 'Comment text is required',
     },
     forumTopic: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "ForumTopic",
+      ref: 'ForumTopic',
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
     },
     community: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Community"
-    }
+      ref: 'Community',
+    },
   },
   {
     timestamps: true,
@@ -34,5 +34,5 @@ const forumCommentSchema = new Schema(
   }
 );
 
-const ForumComment = mongoose.model("ForumComment", forumCommentSchema);
+const ForumComment = mongoose.model('ForumComment', forumCommentSchema);
 module.exports = ForumComment;

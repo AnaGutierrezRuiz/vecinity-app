@@ -22,6 +22,7 @@ module.exports.auth = (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     User.findById(decoded.sub)
+      .populate('community')
       .then((user) => {
         if (user) {
           req.user = user;
