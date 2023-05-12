@@ -2,28 +2,28 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const forumTopicSchema = new Schema({
-  title: { 
+  title: {
     type: String,
-    required: true,
-    minlength: [2, "Forum Topic tittle needs at least 2 chars"],
-    maxlength: [20, 'Forum Topic description max 20 chars']
+    required: 'Title is required',
+    minlength: [2, 'Title needs at least 2 chars'],
+    maxlength: [20, 'Claim title max 20 chars'],
   },
   description: {
     type: String,
-    required: true,
-    minlength: [20, 'Forum Topic description needs at least 20 chars'],
-    maxlength: [140, 'Forum Topic description max 140 chars']
+    required: 'Description is required',
+    minlength: [20, 'Description needs at least 20 chars'],
+    maxlength: [140, 'Description max 140 chars'],
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
+    ref: 'User',
   },
   community: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Community"
-  }
+    ref: 'Community',
+  },
 
-}, { 
+}, {
   timestamps: true,
   toJSON: {
     virtuals: true,
@@ -33,8 +33,7 @@ const forumTopicSchema = new Schema({
       delete ret._id;
       return ret;
     }
-
-  } 
+  }
 });
 
 const ForumTopic = mongoose.model('ForumTopic', forumTopicSchema);

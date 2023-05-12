@@ -1,34 +1,33 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const claimSchema = new Schema({
   title: {
     type: String,
-    required: "Title is required",
-    minLength: [2, "Name needs at least 2 chars"],
-    maxLength: [20, "Clain title max 20 chars"]
-
+    required: 'Title is required',
+    minlength: [2, 'Title needs at least 2 chars'],
+    maxlength: [20, 'Title max 20 chars'],
   },
   description: {
     type: String,
-    required: "Lastname is required",
-    minLength: [20, "Name needs at least 2 chars"],
-    maxLength: [140, "Clain title max 20 chars"]
+    required: 'Description is required',
+    minlength: [20, 'Description needs at least 20 chars'],
+    maxlength: [140, 'Description max 140 chars'],
   },
   community: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Community"
+    ref: 'Community',
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
+    ref: 'User',
   },
   state: {
     type: String,
-    enum: ["Pending", "Solved"],
-    default: "Pending"
+    enum: ['Pending', 'Solved'],
+    default: 'Pending',
   }
-
+  
 }, {
   timestamps: true,
   toJSON: {
@@ -40,15 +39,8 @@ const claimSchema = new Schema({
       return ret;
     }
   }
-}
-);
-
-claimSchema.virtual("claims", {
-  ref: "Claim",
-  localField: "_id",
-  foreignField: "user",
-  justOne: false
 });
 
 const Claim = mongoose.model('Claim', claimSchema);
-module.exports = Claim; 
+module.exports = Claim;
+
