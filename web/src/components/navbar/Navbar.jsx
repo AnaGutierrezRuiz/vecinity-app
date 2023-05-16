@@ -15,7 +15,7 @@ function Navbar() {
           {(user?.id) ? (
             <Link to={`/communities/${userCommunity}`} className="flex items-center">
               <img src="/images/vecinity-logo2.png" className="h-14 mr-3" alt="Vecinity Logo" />
-              <span className="self-center text-3xl md:text-4xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
+              <span className="self-center text-2xl md:text-3xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
             </Link>
 
           ) : (
