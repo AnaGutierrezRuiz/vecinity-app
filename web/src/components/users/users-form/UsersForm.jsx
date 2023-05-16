@@ -19,7 +19,6 @@ function UsersForm() {
     userService
       .create(user)
       .then((user) => {
-        console.info(user);
         navigate('/confirm-account');
       })
 

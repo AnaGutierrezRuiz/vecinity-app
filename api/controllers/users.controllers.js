@@ -35,7 +35,6 @@ module.exports.confirm = (req, res, next) => {
   req.user
     .save()
     .then((user) => {
-      console.log('entro');
       res.redirect(`${process.env.WEB_URL}/login`);
     })
     .catch(next);

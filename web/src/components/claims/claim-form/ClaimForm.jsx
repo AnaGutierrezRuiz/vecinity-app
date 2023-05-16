@@ -14,7 +14,6 @@ function ClaimForm({ onClaimCreated }) {
     claimsService.create(id, claim)
       .then(claim => {
         onClaimCreated();
-        console.info(claim);
       })
       .catch(error => {
         const errors = error.response?.data?.errors;

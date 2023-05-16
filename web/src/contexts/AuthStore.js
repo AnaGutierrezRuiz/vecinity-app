@@ -17,7 +17,6 @@ function AuthStore({ children }) {
   const navigate = useNavigate();
 
   const handleUserChange = (user) => {
-    console.log('Updating user context', user);
     if (!user) {
       localStorage.removeItem('current-user');
       localStorage.removeItem('user-access-token');
