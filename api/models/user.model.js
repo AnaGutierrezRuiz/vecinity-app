@@ -33,7 +33,7 @@ const userSchema = new Schema({
   confirm: {
     type: Boolean,
     // default: process.env.USER_CONFIRMATION_REQUIRED
-    default: true
+    default: false
   },
   password: {
     type: String,

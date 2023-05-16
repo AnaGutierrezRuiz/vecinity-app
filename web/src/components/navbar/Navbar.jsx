@@ -12,10 +12,18 @@ function Navbar() {
     <>
       <nav className="bg-white border-gray-500 dark:bg-gray-900 sticky top-0 z-50 w-full">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <Link to="/" className="flex items-center">
-            <img src="/images/vecinity-logo1.png" className="h-14 mr-3" alt="Vecinity Logo" />
-            <span className="self-center text-3xl md:text-4xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
-          </Link>
+          {(user?.id) ? (
+            <Link to={`/communities/${userCommunity}`} className="flex items-center">
+              <img src="/images/vecinity-logo2.png" className="h-14 mr-3" alt="Vecinity Logo" />
+              <span className="self-center text-3xl md:text-4xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
+            </Link>
+
+          ) : (
+            <Link to="/" className="flex items-center">
+              <img src="/images/vecinity-logo2.png" className="h-14 mr-3" alt="Vecinity Logo" />
+              <span className="self-center text-3xl md:text-4xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
+            </Link>
+          )}
           {(user?.id) ? (
             <div className="flex items-center md:order-2 me-3">
               <img className="w-11 h-11 rounded-full" src={user.imageUrl} alt="userphoto" />
@@ -41,9 +49,6 @@ function Navbar() {
                 </>
               ) : (
                 <>
-                  <NavLink to="/join" className="block py-2 px-8 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
-                    Join
-                  </NavLink>
                   <NavLink to="/login" className="block py-2 px-8 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
                     Log in
                   </NavLink>

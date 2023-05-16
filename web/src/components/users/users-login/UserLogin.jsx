@@ -213,7 +213,7 @@ function UserLogin() {
                   </form>
                   <div>
                     <img
-                      src="/images/mobile3.png"
+                      src="/images/login.png"
                       className="w-80 lg:w-96 lg:ml-20"
                       alt="login illustration"
                     />

@@ -40,25 +40,19 @@ function Footer() {
           </div>
         ) : (
 
-          <div className="sticky bottom-0 mb-2 left-0 z-50 w-full h-12 bg-orangesoft border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 lg:hidden md:hidden">
-            <div className="grid h-full max-w-lg grid-cols-3 mx-auto border-b">
+          <div className="sticky bottom-0 mb-2 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 lg:hidden md:hidden">
+            <div className="grid h-full max-w-lg grid-cols-2 mx-auto border-b">
 
-              {/* My Community  */}
+              {/* Login  */}
 
               <Link to={`/login`} className="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600">
-                <span className="text-sm text-white dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Login</span>
+                <span className="ext-sm text-gray-500 dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Login</span>
               </Link>
 
               {/* Events */}
 
               <Link to={`/signup`} className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-                <span className="text-sm text-white dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Sign Up</span>
-              </Link>
-
-              {/* Settings */}
-
-              <Link to={`/join`} type="button" className="inline-flex flex-col items-center justify-center px-5 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-gray-600">
-                <span className="text-sm text-white dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Join</span>
+                <span className="ext-sm text-gray-500 dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Sign Up</span>
               </Link>
             </div>
           </div>)}
