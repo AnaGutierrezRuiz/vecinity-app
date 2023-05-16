@@ -34,7 +34,7 @@ function ForumCommentsList({ refresh }) {
         : (
           <div className="mb-20 pb-5">
             {forumComments.map((forumComment) => (
-              <ForumCommentItem forumComment={forumComment} />))}
+              <ForumCommentItem forumComment={forumComment} key={forumComment.id}/>))}
           </div>
         )
       }
