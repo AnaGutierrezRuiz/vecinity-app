@@ -20,7 +20,7 @@ function UsersForm() {
       .create(user)
       .then((user) => {
         console.info(user);
-        navigate('/login');
+        navigate('/confirm-account');
       })
 
       .catch((error) => {

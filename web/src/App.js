@@ -26,6 +26,7 @@ import ThemeContext from './contexts/ThemeContext';
 import { useContext } from 'react';
 import Error403Page from './pages/Error403Page';
 import WelcomePage from './pages/WelcomePage';
+import ConfirmPage from './pages/ConfirmPage';
 
 
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/signup" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/create-join" element={<CreateJoinPage />} />
+            <Route path="/confirm-account" element={<ConfirmPage />} />
             <Route path="/join" element={<JoinPage />} />
             <Route path="/welcome/:id" element={<WelcomePage />} />
             <Route path="/communities/create" element={<CommunityCreatePage />} />
