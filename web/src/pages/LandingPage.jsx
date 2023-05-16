@@ -52,26 +52,26 @@ function LandingPage() {
           <div className="w-full mb-4">
             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
           </div>
-          <div className="flex flex-wrap">
-            <div className="w-5/6 sm:w-1/2 p-6 flex flex-col items-center justify-center">
+          <div className="flex flex-wrap text-center justify-center">
+            <div className="w-5/6 sm:w-1/2 pt-6 flex flex-col items-center justify-center">
               <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3 dark:text-white">
                 Submit a claim in the blink of an eye
               </h3>
-              <p className="text-gray-600 mb-8 dark:text-white">
+              <p className="text-gray-600 dark:text-white">
                 As soon as you notice that something is not working properly, post it on the app so that the manager is aware and can resolve it as soon as possible. You can continue to track its status from the app.
                 <br />
                 <br />
               </p>
             </div>
-            <div className="w-full sm:w-1/2 p-6">
+            <div className="w-full sm:w-1/2 pb-6">
               <img src="/images/mobile1.png" alt="mobile" />
             </div>
 
             <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-              <div className="w-full sm:w-1/2 p-6 mt-6 flex flex-col items-center justify-center">
+              <div className="w-full sm:w-1/2 pb-6 mt-1 flex flex-col items-center text-center justify-center">
                 <img src="images/mobile2.png" alt="mobile" />
               </div>
-              <div className="w-full sm:w-1/2 p-6 flex flex-col items-center justify-center">
+              <div className="w-full sm:w-1/2 pt-6 flex flex-col items-center justify-center">
                 <div className="align-middle">
                   <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3 dark:text-white">
                     Stay tuned with the community events
@@ -85,8 +85,8 @@ function LandingPage() {
               </div>
             </div>
 
-            <div className="flex flex-wrap">
-              <div className="w-5/6 sm:w-1/2 p-6 flex flex-col items-center justify-center">
+            <div className="flex flex-wrap text-center justify-center">
+              <div className="w-5/6 sm:w-1/2 pt-3 flex flex-col items-center text-center justify-center">
                 <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3 dark:text-white">
                   Connect with your neighbours like never before
                 </h3>
@@ -96,21 +96,21 @@ function LandingPage() {
                   <br />
                 </p>
               </div>
-              <div className="w-full sm:w-1/2 p-6">
+              <div className="w-full sm:w-1/2 pb-6">
                 <img src="/images/mobile3.png" alt="mobile" />
               </div>
             </div>
 
             <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-              <div className="w-full sm:w-1/2 p-6 mt-6">
+              <div className="w-full sm:w-1/2">
                 <img src="images/mobile4.png" alt="mobile" />
               </div>
-              <div className="w-full sm:w-1/2 p-6 flex flex-col items-center justify-center">
+              <div className="w-full sm:w-1/2 p-3 flex flex-col items-center text-center justify-center">
                 <div className="align-middle">
-                  <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3 dark:text-white">
+                  <h3 className="text-3xl text-gray-800 font-bold leading-none m-5 dark:text-white">
                     Make reservations for your shared facilities instantly
                   </h3>
-                  <p className="text-gray-600 mb-8 dark:text-white">
+                  <p className="text-gray-600 dark:text-white">
                     Up for a paddle match? From the app you will be able to make a reservation nice and easily. Oh, and you can use the forum to find neighbours to play with!
                     <br />
                     <br />
@@ -299,7 +299,7 @@ function LandingPage() {
                 </li>
                 <li>
                   <Link to="https://github.com/Victorlpz23" className="text-[#00acee] hover:text-gray-900 dark:hover:text-white">
-                    <img className="w-8" src="images/githubpng.png" alt="Github logo" />
+                    <img className="w-8" src="images/github.png" alt="Github logo" />
                   </Link>
                 </li>
               </ul>
@@ -318,7 +318,7 @@ function LandingPage() {
                 </li>
                 <li>
                   <Link to="https://github.com/AnaGutierrezRuiz" className="text-[#00acee] hover:text-gray-900 dark:hover:text-white">
-                    <img className="w-8" src="images/githubpng.png" alt="Github logo" />
+                    <img className="w-8" src="images/github.png" alt="Github logo" />
                   </Link>
                 </li>
               </ul>
@@ -337,7 +337,7 @@ function LandingPage() {
                 </li>
                 <li>
                   <Link to="https://github.com/garin90" className="text-[#00acee] hover:text-gray-900 dark:hover:text-white">
-                    <img className="w-8" src="images/githubpng.png" alt="Github logo" />
+                    <img className="w-8" src="images/github.png" alt="Github logo" />
                   </Link>
                 </li>
               </ul>

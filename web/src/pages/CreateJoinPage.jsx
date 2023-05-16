@@ -34,12 +34,12 @@ function CreateJoinPage() {
               </Link>
             </div>
             <div className="w-full sm:w-1/2 p-6">
-              <img src="/images/mobile-neighbours.png" alt="neighbours" />
+              <img src="/images/neighbours.png" alt="neighbours" />
             </div>
 
             <div className="flex flex-wrap flex-col-reverse sm:flex-row">
               <div className="w-full sm:w-1/2 p-6 mt-6 flex flex-col items-center justify-center">
-                <img src="images/mobile-manager.png" alt="manager" />
+                <img src="images/manager.png" alt="manager" />
               </div>
               <div className="w-full sm:w-1/2 p-6 mt-6 ">
                 <div className="align-middle">
