@@ -6,19 +6,19 @@ import { AuthContext } from '../../contexts/AuthStore';
 function Navbar() {
 
   const { user, logout } = useContext(AuthContext);
-
+  const userCommunity = user?.community?.id || user?.community;
 
   return (
     <>
       <nav className="bg-white border-gray-500 dark:bg-gray-900 sticky top-0 z-50 w-full">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center">
-            <img src="/images/vecinity-logo-opcionb.png" className="h-14 mr-3" alt="Vecinity Logo" />
+            <img src="/images/vecinity-logo1.png" className="h-14 mr-3" alt="Vecinity Logo" />
             <span className="self-center text-3xl md:text-4xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
           </Link>
           {(user?.id) ? (
             <div className="flex items-center md:order-2 me-3">
-              <img className="w-11 h-11 rounded-full" src={user?.imageUrl} alt="userphoto" />
+              <img className="w-11 h-11 rounded-full" src={user.imageUrl} alt="userphoto" />
             </div>
 
           ) : (
@@ -32,7 +32,7 @@ function Navbar() {
                   <li to="/profile" className="block py-2 px-10  mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
                     <h1>Welcome {user.name}</h1>
                   </li>
-                  <NavLink to={`/communities/${user.community.id}`} className="block py-2  px-6 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
+                  <NavLink to={`/communities/${userCommunity}`} className="block py-2  px-6 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
                     My Community
                   </NavLink>
                   <li className="block py-2 px-6 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
