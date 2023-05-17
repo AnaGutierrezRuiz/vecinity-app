@@ -17,7 +17,7 @@ function ForumCommentsForm({ onCommentCreated }) {
   };
 
   return (
-    <div className="mb-20 pb-1">
+    <div className="mb-40 pb-1">
       <form onSubmit={handleSubmit(onCommentSubmit)}>
         <div className="flex flex-col justify-center w-90 m-6 lg:m-20 md:mx-16 mb-4 border border-green rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
           <div className="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
@@ -37,7 +37,7 @@ function ForumCommentsForm({ onCommentCreated }) {
             type="submit"
             className="inline-flex items-center justify-center py-2.5 px-4 text-xs font-medium text-center text-white bg-green rounded-lg focus:ring-4 focus:ring-green dark:focus:ring-blue-900 hover:bg-green"
           >
-            Post Comment
+            Post comment
           </button>
         </div>
       </form>

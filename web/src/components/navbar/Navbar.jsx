@@ -21,7 +21,7 @@ function Navbar() {
           ) : (
             <Link to="/" className="flex items-center">
               <img src="/images/vecinity-logo2.png" className="h-14 mr-3" alt="Vecinity Logo" />
-              <span className="self-center text-3xl md:text-4xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
+              <span className="self-center text-2xl md:text-3xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
             </Link>
           )}
           {(user?.id) ? (
@@ -41,7 +41,7 @@ function Navbar() {
                     <h1>Welcome {user.name}</h1>
                   </li>
                   <NavLink to={`/communities/${userCommunity}`} className="block py-2  px-6 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
-                    My Community
+                    My community
                   </NavLink>
                   <li className="block py-2 px-6 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
                     <button onClick={() => logout()} >Log out</button>

@@ -6,7 +6,7 @@ function RegisterPage() {
   
   return (
     <>
-      <PageLayout title="Create Account">
+      <PageLayout title="Sign up">
         <UsersForm />
       </PageLayout>
     </>

@@ -9,7 +9,7 @@ function ReservationForm({ onReservationCreated }) {
   const [serverError, setServerError] = useState();
   const [processing, setProcessing] = useState(false);
 
-  const [facilitySelected, setFacilitySelected] = useState("Paddle Court");
+  const [facilitySelected, setFacilitySelected] = useState("Paddle court");
   const [dateSelected, setDateSelected] = useState();
 
   const { id } = useParams();
@@ -47,7 +47,7 @@ function ReservationForm({ onReservationCreated }) {
     <>
       <section className="bg-white dark:bg-gray-800 mb-6">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto ">
-          <div className="w-full bg-gray-100 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
+          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-green md:text-2xl dark:text-white">
                 Make a reservation
@@ -74,8 +74,8 @@ function ReservationForm({ onReservationCreated }) {
                 <div>
                   <label htmlFor="facility" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a facility</label>
                   <select value={facilitySelected} onChange={handleFacilityChange} id="facility" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="Paddle Court">Paddle court</option>
-                    <option value="Multipurpose Room">Multipurpose room</option>
+                    <option value="Paddle court">Paddle court</option>
+                    <option value="Multipurpose room">Multipurpose room</option>
                     <option value="Gym">Gym</option>
                   </select>
                 </div>

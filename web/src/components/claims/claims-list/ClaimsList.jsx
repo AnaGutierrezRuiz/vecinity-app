@@ -41,7 +41,7 @@ function ClaimsList({ refresh }) {
       )
         : (
           <>
-            <div className="flex flex-col items-center px-6 py-2 mx-auto  lg:py-0 mb-20">
+            <div className="flex flex-col items-center px-6 py-2 mx-auto  lg:py-0 mb-6">
               <ol className="border-l border-neutral-300 dark:border-neutral-500">
                 {claims.map((claim) =>
                   <ClaimItem claim={claim} key={claim.id} communityId={id} />

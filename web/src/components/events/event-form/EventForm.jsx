@@ -31,7 +31,7 @@ function EventForm() {
     <>
       <section className="bg-white dark:bg-gray-800 pb-20">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-6">
-          <div className="w-full bg-gray-100 rounded-lg dark:border shadow-sm md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
+          <div className="w-full bg-white rounded-lg dark:border shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8 shadow">
               <h1 className="text-xl font-bold leading-tight text-center tracking-tight text-green md:text-2xl dark:text-white">
                 Add a new event
@@ -120,7 +120,7 @@ function EventForm() {
                 </div>
 
 
-                <button type="submit" className="w-full text-white bg-orange hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create Event</button>
+                <button type="submit" className="w-full text-white bg-orange hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Add event</button>
               </form>
             </div>
           </div>

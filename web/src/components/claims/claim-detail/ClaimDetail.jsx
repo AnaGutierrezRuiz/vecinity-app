@@ -47,7 +47,7 @@ function ClaimDetail() {
         : (
           <>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto mb-20">
-              <div className="w-full bg-gray-100 rounded-lg shadow  dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
+              <div className="w-full bg-white rounded-lg shadow  dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
                 <div className="flex justify-center mt-5 mb-3">
                   <ol className="flex items-center">
                     <li className="relative w-full mb-6">

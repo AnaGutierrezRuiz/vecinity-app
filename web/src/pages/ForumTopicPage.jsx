@@ -7,7 +7,7 @@ function ForumTopicPage() {
   
   return (
     <>
-      <PageLayout title="Topic Comments">
+      <PageLayout title="Topic comments">
         <ForumTopicDetail />
       </PageLayout>
     </>

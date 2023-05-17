@@ -121,7 +121,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      <section className="bg-gray-100 light:border-b py-8 dark:bg-gray-800">
+      <section className="bg-white light:border-b py-8 dark:bg-gray-800">
         <div className="container mx-auto flex flex-wrap pt-4 pb-12">
           <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 dark:text-white">
             How does it work? First steps

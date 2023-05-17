@@ -6,7 +6,7 @@ function LoginPage() {
   
   return (
     <>
-      <PageLayout title="Login">
+      <PageLayout title="Log in">
         <UserLogin />
       </PageLayout>
     </>

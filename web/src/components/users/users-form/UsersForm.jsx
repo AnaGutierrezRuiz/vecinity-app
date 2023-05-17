@@ -319,7 +319,7 @@ function UsersForm() {
                         I accept the{" "}
                         <Link
                           className="font-medium text-green hover:underline dark:text-primary-500"
-                          to="/"
+                          to="#"
                         >
                           Terms and Conditions
                         </Link>
@@ -337,7 +337,7 @@ function UsersForm() {
                     <Link to="/login"
                       className="font-medium text-green hover:underline dark:text-primary-500"
                     >
-                      Login here
+                      Log in
                     </Link>
                   </p>
                 </form>

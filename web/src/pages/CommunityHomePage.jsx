@@ -9,7 +9,7 @@ function CommunityHomePage() {
 
   return (
     <>
-      <PageLayout title="My Community">
+      <PageLayout title="My community">
         <div>
           <div className="grid grid-cols-2 gap-6 justify-items-center lg:grid-cols-3 md:grid-cols-2 lg: pt-16">
             <NavLink to={`/communities/${user?.community?.id}/claims`}>

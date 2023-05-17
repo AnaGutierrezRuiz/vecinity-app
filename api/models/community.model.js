@@ -16,7 +16,7 @@ const communitySchema = new Schema({
   },
   facilities: [{
     type: String,
-    enum: ['Paddle Court', 'Multipurpose Room', 'Gym'],
+    enum: ['Paddle court', 'Multipurpose room', 'Gym'],
     minlength: [2, 'Community facilities need at least 2 chars']
   }],
   imageUrl: {
