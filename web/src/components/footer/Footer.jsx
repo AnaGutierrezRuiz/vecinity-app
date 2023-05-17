@@ -48,13 +48,13 @@ function Footer() {
             {/* My Community  */}
 
             <Link to={`/login`} className="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600">
-              <span className="text-sm text-white dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Login</span>
+              <span className="ext-sm text-gray-500 dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Log in</span>
             </Link>
 
             {/* Events */}
 
             <Link to={`/signup`} className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-              <span className="text-sm text-white dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Sign Up</span>
+              <span className="ext-sm text-gray-500 dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Sign up</span>
             </Link>
           </div>
         </div> )}
