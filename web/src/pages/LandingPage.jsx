@@ -71,7 +71,7 @@ function LandingPage() {
               <div className="w-full sm:w-1/2 pb-6 mt-1 flex flex-col items-center text-center justify-center">
                 <img src="images/mobile2.png" alt="mobile" />
               </div>
-              <div className="w-full sm:w-1/2 pt-6 flex flex-col items-center justify-center">
+              <div className="w-5/6 sm:w-1/2 pt-6 flex flex-col items-center text-center justify-center">
                 <div className="align-middle">
                   <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3 dark:text-white">
                     Stay tuned with the community events
@@ -124,7 +124,10 @@ function LandingPage() {
       <section className="bg-white light:border-b py-8 dark:bg-gray-800">
         <div className="container mx-auto flex flex-wrap pt-4 pb-12">
           <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 dark:text-white">
-            How does it work? First steps
+            How does it work?
+          </h2>
+          <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 dark:text-white">
+            First steps
           </h2>
           <div className="w-full mb-4">
             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
