@@ -14,14 +14,12 @@ function Navbar() {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           {(user?.id) ? (
             <Link to={`/communities/${userCommunity}`} className="flex items-center">
-              <img src="/images/vecinity-logo2.png" className="h-14 mr-3" alt="Vecinity Logo" />
-              <span className="self-center text-2xl md:text-3xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
+              <img src="/images/vecinity-app-logo-with-text.png" className="h-14 mr-3" alt="Vecinity Logo" />
             </Link>
 
           ) : (
             <Link to="/" className="flex items-center">
-              <img src="/images/vecinity-logo2.png" className="h-14 mr-3" alt="Vecinity Logo" />
-              <span className="self-center text-2xl md:text-3xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
+              <img src="/images/vecinity-app-logo-with-text.png" className="h-14 mr-3" alt="Vecinity Logo" />
             </Link>
           )}
           {(user?.id) ? (
