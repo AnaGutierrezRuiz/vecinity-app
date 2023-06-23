@@ -5,6 +5,7 @@ import DarkModeToggle from '../../dark-mode/DarkModeToggle';
 
 function UserSettings() {
   const { user, logout } = useContext(AuthContext);
+  const userCommunity = user?.community?.id || user?.community
 
   return (
     <div className="pb-60 flex flex-col items-center">
@@ -12,7 +13,7 @@ function UserSettings() {
         <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400 items-center">
           <li className="mr-2">
             <Link
-              to={`/communities/${user?.community.id}/users/${user?.id}/account`}
+              to={`/communities/${userCommunity}/users/${user?.id}/account`}
               className="inline-flex p-4 border-b-2 border-transparent rounded-t-lg hover:text-orange hover:border-orange dark:hover:text-gray-300 group"
             >
               <svg
@@ -34,7 +35,7 @@ function UserSettings() {
 
           <li className="mr-2">
             <Link
-              to={`/communities/${user?.community.id}/users/${user?.id}/settings`}
+              to={`/communities/${userCommunity}/users/${user?.id}/settings`}
               className="inline-flex p-4 border-b-2 border-transparent rounded-t-lg hover:text-orange hover:border-orange dark:hover:text-gray-300 group"
             >
               <svg
