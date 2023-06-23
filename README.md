@@ -101,6 +101,7 @@ Landing page
 Signup form and confirm account page
 <br>
 <br>
+<img src="web/public/images/screenshots/va-signup-lg.png" width="650px">
 <img src="web/public/images/screenshots/va-confirm-account-lg.png" width="650px">
 <br>
 Login form
@@ -111,7 +112,6 @@ Login form
 Create or join a community with a provided code
 <br>
 <br>
-<img src="web/public/images/screenshots/va-signup-lg.png" width="650px">
 <img src="web/public/images/screenshots/va-join-or-create-lg.png" width="650px">
 <img src="web/public/images/screenshots/va-join-lg.png" width="650px">
 
