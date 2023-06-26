@@ -15,13 +15,13 @@ With the social community forum you can share anything with your neighbours, fro
 Up for a paddle match? From the app you will be able to make a reservation nice and easily. Oh, and you can use the forum to find neighbours to play with!
 <br>
 <h4>🏠 Share a list of realiable services within your community</h4>
-Need a plumber? A painter, maybe? Check the contacts section on your app to discover services nearby that your neighbours rely on and have have prior positive experienes with. 
+Need a plumber? A painter, maybe? Check the contacts section on your app to discover services nearby that your neighbours rely on and have had prior positive experiences with. 
 <br>
 <br>
 <h1>Tech info</h1> 
 📱 Mobile-first appplication. 
 <br>
-▪️ Front-end Framework + MERN full-stack app with users and communities full CRUDs.
+▪️ Front-end framework + MERN full-stack app with users and communities full CRUDs.
 <br>
 ▪️ Main technologies used: JavaScript, ReactJS, HTML, CSS, TailwindCss, ExpressJS, NodeJS, Axios, MongoDB
 <br>
